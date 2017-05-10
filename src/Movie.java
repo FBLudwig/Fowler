@@ -33,13 +33,4 @@ public class Movie {
     public String getName(){
         return _name;
     }
-
-    int getFrequentRenterPoints(Rental rental) {
-        if ((rental.getMovie().getPriceCode() == NEW_RELEASE) && rental.getDaysRented() > 1) {
-            return 2;
-        }
-        else {
-            return 1;
-        }
-    }
 }
