@@ -4,7 +4,7 @@ import static org.junit.Assert.*;
 
 public class CustomerTest {
 
-    Movie movie = new Movie("Test", 5);
+    Movie movie = new Movie("Test", 1);
     Rental rental = new Rental(movie, 7);
     Customer customer = new Customer("NewName");
 

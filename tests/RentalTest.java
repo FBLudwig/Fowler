@@ -3,7 +3,7 @@ import org.junit.Test;
 import static org.junit.Assert.*;
 
 public class RentalTest {
-    Movie movie = new Movie("Test", 5);
+    Movie movie = new Movie("Test", 0);
     Rental rental = new Rental(movie, 7);
 
     @Test
