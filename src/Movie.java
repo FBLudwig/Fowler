@@ -2,21 +2,25 @@ public class Movie {
     public static final int CHILDRENS = 2;
     public static final int REGULAR = 0;
     public static final int NEW_RELEASE = 1;
-    private String title;
-    private int priceCode;
-    public Movie(String newtitle, int newpriceCode) {
-        title = newtitle;
-        priceCode = newpriceCode;
+    private String _name;
+    private int _priceCode;
+
+    public Movie(String name, int priceCode) {
+        _name = name;
+        setPriceCode(priceCode);
     }
+
     public int getPriceCode() {
-        return priceCode;
+        return _priceCode;
     }
+
     public void setPriceCode(int arg) {
-        priceCode = arg;
+        _priceCode = arg;
     }
-    public String getTitle (){
-        return title;
-    };
+
+    public String getName(){
+        return _name;
+    }
 
     double getCharge(Rental rental) {
         double result = 0;
