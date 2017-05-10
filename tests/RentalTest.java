@@ -1,8 +1,19 @@
+import org.junit.Test;
+
 import static org.junit.Assert.*;
 
-/**
- * Created by Frederik on 10.05.2017.
- */
 public class RentalTest {
+    Movie movie = new Movie("Test", 5);
+    Rental rental = new Rental(movie, 7);
+
+    @Test
+    public void getDaysRented() throws Exception {
+        assertEquals(rental.getDaysRented(), 7);
+    }
+
+    @Test
+    public void getMovie() throws Exception {
+        assertEquals(rental.getMovie(), movie);
+    }
 
 }
