@@ -3,6 +3,7 @@ import org.junit.Test;
 import static org.junit.Assert.*;
 
 public class CustomerTest {
+
     Movie movie = new Movie("Test", 5);
     Rental rental = new Rental(movie, 7);
     Customer customer = new Customer("NewName");
@@ -64,4 +65,20 @@ public class CustomerTest {
         assertEquals(c1.statement(), statement);
     }
 
+    @Test
+    public void htmlStatement() throws Exception {
+        Movie m1 = new Movie("movie1", 1);
+        Movie m2 = new Movie("movie2", 2);
+        Rental r1 = new Rental(m1, 10);
+        Rental r2 = new Rental(m2, 5);
+        Customer c1 = new Customer("joe");
+        c1.addRental(r1);   c1.addRental(r2);
+
+        String htmlStatement = "<H1>Rentals for <EM>joe</EM></H1><P>\n" +
+                "movie1: 30.0<BR>\n" +
+                "movie2: 4.5<BR>\n" +
+                "<P>You owe <EM>34.5</EM><P>\n" +
+                "On this rental you earned <EM>3</EM> frequent renter points<P>";
+        assertEquals(c1.htmlStatement(), htmlStatement);
+    }
 }
